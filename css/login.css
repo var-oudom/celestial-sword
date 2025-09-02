@@ -1,0 +1,100 @@
+.user_card {
+    width: 350px;
+    margin-top: 110px;
+    margin-bottom: auto;
+    background: #F5F5F5;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+.brand_logo_container {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    top: -80px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    padding: 5px;
+    text-align: center;
+}
+.brand_logo_container img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+.brand_logo {
+    font-size: 71px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    color: #6c757d;
+}
+.form_container {
+    margin: 20px 0 10px;
+}
+.login_btn {
+    width: 100%;
+    background: #8B2520 !important;
+    color: white !important;
+    margin-top: 8px;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0;
+}
+.input-group-text{
+    background: #8B2520;
+    color: white !important;
+    border: 0 !important;
+}
+.input-group-text i{
+    width: 15px;
+    font-size: 14px;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.input-group{
+    padding: 8px 0;
+}
+.telegram-status{
+    background: #d1d5d8 !important;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+}
+.login-bg{
+    background-image: url('/img/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.menu-bg{
+    background: url('/theme/img/menu-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    min-width: 120px;
+    height: 38px;
+    margin: 0 5px;
+    text-align: center;
+
+}
