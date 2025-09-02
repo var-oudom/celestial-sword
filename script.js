@@ -773,13 +773,19 @@ const userMenuStyles = `
 .user-avatar {
     width: 40px;
     height: 40px;
-    background: var(--primary-gold);
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--dark-bg);
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-item i {
+    margin-right: var(--spacing-xs);
+    width: 16px;
 }
 
 .user-name {
@@ -874,15 +880,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero buttons functionality
     document.querySelector('.btn-hero-primary').addEventListener('click', () => {
         if (gameWebsite.isLoggedIn) {
-            gameWebsite.showNotification('Launching game client...', 'success');
+            gameWebsite.showNotification('Launching game client...', 'success', 'fas fa-rocket');
         } else {
-            gameWebsite.showNotification('Please login to play the game', 'warning');
+            gameWebsite.showNotification('Please login to play the game', 'warning', 'fas fa-exclamation-triangle');
             gameWebsite.openModal('login-modal');
         }
     });
 
     document.querySelector('.btn-hero-secondary').addEventListener('click', () => {
-        gameWebsite.showNotification('Game trailer coming soon!', 'info');
+        gameWebsite.showNotification('Game trailer coming soon!', 'info', 'fas fa-video');
+    });
+    
+    // Social authentication handlers
+    document.querySelectorAll('.social-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const provider = btn.dataset.provider;
+            gameWebsite.handleSocialAuth(provider);
+        });
     });
 
     // Add particle effect to hero section
@@ -903,7 +917,7 @@ function createParticleEffect() {
             background: var(--primary-gold);
             border-radius: 50%;
             opacity: 0.6;
-            animation: float ${Math.random() * 10 + 10}s linear infinite;
+            animation: float ${Math.random() * 15 + 10}s linear infinite;
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
             z-index: 1;
@@ -970,6 +984,12 @@ document.addEventListener('keydown', (e) => {
         if (!gameWebsite.isLoggedIn) {
             gameWebsite.openModal('register-modal');
         }
+    }
+    
+    // Escape to close modals
+    if (e.key === 'Escape') {
+        gameWebsite.closeModal('login-modal');
+        gameWebsite.closeModal('register-modal');
     }
 });
 
