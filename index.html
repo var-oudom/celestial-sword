@@ -3,206 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celestial Sword - Ancient Chinese MMORPG</title>
+    <title>Celestial Sword - Epic MMORPG Adventure</title>
+    <meta name="description" content="Enter the world of Celestial Sword - An epic MMORPG with ancient Chinese mythology, intense PvP battles, and legendary quests.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
 </head>
 <body>
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <button class="lang-btn active" data-lang="en">English</button>
-        <button class="lang-btn" data-lang="km">ខ្មែរ</button>
-    </div>
-
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <div class="dragon-logo">🐉</div>
-            <h1 class="game-title" data-en="Celestial Sword" data-km="ដាវស្វាយ">Celestial Sword</h1>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" alt="Celestial Sword" class="logo-img">
+                <span class="logo-text">Celestial Sword</span>
             </div>
-            <p class="loading-text" data-en="Loading the Ancient Realm..." data-km="កំពុងផ្ទុកពិភពបុរាណ...">Loading the Ancient Realm...</p>
-        </div>
-    </div>
-
-    <!-- Main Menu -->
-    <div id="main-menu" class="main-menu hidden">
-        <div class="menu-background"></div>
-        <div class="menu-content">
-            <h1 class="game-title" data-en="Celestial Sword" data-km="ដាវស្វាយ">Celestial Sword</h1>
-            <div class="menu-buttons">
-                <button class="menu-btn" id="new-game-btn" data-en="New Journey" data-km="ដំណើរថ្មី">New Journey</button>
-                <button class="menu-btn" id="continue-btn" data-en="Continue" data-km="បន្ត">Continue</button>
-                <button class="menu-btn" id="settings-btn" data-en="Settings" data-km="ការកំណត់">Settings</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Character Creation -->
-    <div id="character-creation" class="character-creation hidden">
-        <div class="creation-background"></div>
-        <div class="creation-content">
-            <h2 data-en="Create Your Hero" data-km="បង្កើតវីរបុរសរបស់អ្នក">Create Your Hero</h2>
             
-            <div class="character-preview">
-                <div class="character-avatar" id="character-avatar">⚔️</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#download" class="nav-link">Download</a></li>
+                <li><a href="#leaderboard" class="nav-link">Rankings</a></li>
+                <li><a href="#support" class="nav-link">Support</a></li>
+            </ul>
+            
+            <div class="nav-auth">
+                <button class="btn-secondary" id="login-btn">Login</button>
+                <button class="btn-primary" id="register-btn">Register</button>
             </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-            <div class="creation-form">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop class="hero-video">
+                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">Celestial Sword</span>
+                    <span class="title-sub">Ancient Legends Await</span>
+                </h1>
+                <p class="hero-description">
+                    Embark on an epic journey through ancient China. Master legendary martial arts, 
+                    forge powerful alliances, and become the ultimate warrior in this immersive MMORPG experience.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-hero-primary">Play Now</button>
+                    <button class="btn-hero-secondary">Watch Trailer</button>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50,000+</span>
+                    <span class="stat-label">Active Players</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Servers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Quests</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Game Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>Epic PvP Battles</h3>
+                    <p>Engage in massive guild wars and arena battles with players worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏯</div>
+                    <h3>Ancient Kingdoms</h3>
+                    <p>Explore vast territories inspired by ancient Chinese dynasties</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐉</div>
+                    <h3>Legendary Beasts</h3>
+                    <p>Battle mythical creatures and dragons for rare treasures</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Martial Arts</h3>
+                    <p>Master powerful kung fu techniques and mystical abilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <h2 class="section-title">Latest News & Updates</h2>
+            <div class="news-grid">
+                <article class="news-card featured">
+                    <div class="news-image">
+                        <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop" alt="Major Update">
+                        <div class="news-badge">Featured</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">January 15, 2025</span>
+                            <span class="news-category">Update</span>
+                        </div>
+                        <h3>Dragon Realm Expansion Now Live!</h3>
+                        <p>Explore the mystical Dragon Realm with new dungeons, legendary weapons, and epic boss battles. Join the adventure today!</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop" alt="PvP Tournament">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">January 12, 2025</span>
+                            <span class="news-category">Event</span>
+                        </div>
+                        <h3>Winter Championship Tournament</h3>
+                        <p>Compete for glory and exclusive rewards in our biggest PvP tournament of the year.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop" alt="Balance Update">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">January 10, 2025</span>
+                            <span class="news-category">Patch</span>
+                        </div>
+                        <h3>Class Balance Update v2.4.1</h3>
+                        <p>Important balance changes to ensure fair gameplay across all character classes.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Download Game Client</h2>
+            <div class="download-content">
+                <div class="download-info">
+                    <h3>System Requirements</h3>
+                    <div class="requirements">
+                        <div class="req-column">
+                            <h4>Minimum</h4>
+                            <ul>
+                                <li>OS: Windows 10 64-bit</li>
+                                <li>Processor: Intel i3-6100 / AMD FX-6300</li>
+                                <li>Memory: 4 GB RAM</li>
+                                <li>Graphics: GTX 750 Ti / RX 460</li>
+                                <li>Storage: 15 GB available space</li>
+                            </ul>
+                        </div>
+                        <div class="req-column">
+                            <h4>Recommended</h4>
+                            <ul>
+                                <li>OS: Windows 11 64-bit</li>
+                                <li>Processor: Intel i5-8400 / AMD Ryzen 5 2600</li>
+                                <li>Memory: 8 GB RAM</li>
+                                <li>Graphics: GTX 1060 / RX 580</li>
+                                <li>Storage: 25 GB available space (SSD)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-buttons">
+                    <button class="download-btn primary">
+                        <div class="download-icon">💻</div>
+                        <div class="download-text">
+                            <span class="download-title">Windows Client</span>
+                            <span class="download-size">2.1 GB</span>
+                        </div>
+                    </button>
+                    <button class="download-btn">
+                        <div class="download-icon">🍎</div>
+                        <div class="download-text">
+                            <span class="download-title">macOS Client</span>
+                            <span class="download-size">2.3 GB</span>
+                        </div>
+                    </button>
+                    <button class="download-btn">
+                        <div class="download-icon">📱</div>
+                        <div class="download-text">
+                            <span class="download-title">Mobile App</span>
+                            <span class="download-size">850 MB</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard">
+        <div class="container">
+            <h2 class="section-title">Player Rankings</h2>
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="level">Level</button>
+                <button class="tab-btn" data-tab="pvp">PvP</button>
+                <button class="tab-btn" data-tab="guild">Guild</button>
+            </div>
+            
+            <div class="leaderboard-content">
+                <div class="leaderboard-table" id="level-table">
+                    <div class="table-header">
+                        <span>Rank</span>
+                        <span>Player</span>
+                        <span>Level</span>
+                        <span>Class</span>
+                        <span>Server</span>
+                    </div>
+                    <div class="table-body" id="level-rankings">
+                        <!-- Rankings will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="leaderboard-table hidden" id="pvp-table">
+                    <div class="table-header">
+                        <span>Rank</span>
+                        <span>Player</span>
+                        <span>Rating</span>
+                        <span>Wins</span>
+                        <span>Server</span>
+                    </div>
+                    <div class="table-body" id="pvp-rankings">
+                        <!-- Rankings will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="leaderboard-table hidden" id="guild-table">
+                    <div class="table-header">
+                        <span>Rank</span>
+                        <span>Guild</span>
+                        <span>Members</span>
+                        <span>Power</span>
+                        <span>Server</span>
+                    </div>
+                    <div class="table-body" id="guild-rankings">
+                        <!-- Rankings will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support">
+        <div class="container">
+            <h2 class="section-title">Support Center</h2>
+            <div class="support-content">
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">How do I create an account?</div>
+                            <div class="faq-answer">Click the Register button and fill out the form with your email and desired password. You'll receive a confirmation email to activate your account.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">What are the system requirements?</div>
+                            <div class="faq-answer">Check our Download section for detailed minimum and recommended system requirements for optimal gameplay.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How do I report a bug or issue?</div>
+                            <div class="faq-answer">Use our contact form below or email support@celestialsword.com with detailed information about the issue.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-section">
+                    <h3>Contact Support</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="support-email">Email</label>
+                            <input type="email" id="support-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="support-subject">Subject</label>
+                            <select id="support-subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="account">Account Problem</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="report">Report Player</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="support-message">Message</label>
+                            <textarea id="support-message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Game</h4>
+                    <ul>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#leaderboard">Rankings</a></li>
+                        <li><a href="#">Game Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Reddit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#support">Contact Us</a></li>
+                        <li><a href="#">Bug Reports</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📺</a>
+                        <a href="#" class="social-link">💬</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Celestial Sword. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to Your Account</h2>
+                <button class="modal-close" id="login-close">&times;</button>
+            </div>
+            <form class="auth-form" id="login-form">
                 <div class="form-group">
-                    <label data-en="Name:" data-km="ឈ្មោះ:">Name:</label>
-                    <input type="text" id="character-name" placeholder="Enter your name">
+                    <label for="login-email">Email or Username</label>
+                    <input type="text" id="login-email" required>
                 </div>
-
                 <div class="form-group">
-                    <label data-en="Class:" data-km="ថ្នាក់:">Class:</label>
-                    <div class="class-selection">
-                        <div class="class-option active" data-class="warrior">
-                            <div class="class-icon">⚔️</div>
-                            <span data-en="Warrior" data-km="អ្នកចម្បាំង">Warrior</span>
-                        </div>
-                        <div class="class-option" data-class="mage">
-                            <div class="class-icon">🔮</div>
-                            <span data-en="Mage" data-km="អ្នកវេទមន្ត">Mage</span>
-                        </div>
-                        <div class="class-option" data-class="archer">
-                            <div class="class-icon">🏹</div>
-                            <span data-en="Archer" data-km="អ្នកបាញ់ធ្នូ">Archer</span>
-                        </div>
-                    </div>
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
                 </div>
-
-                <button class="create-btn" id="create-character-btn" data-en="Begin Adventure" data-km="ចាប់ផ្តើមការផ្សងព្រេង">Begin Adventure</button>
-            </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember-me">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn-primary full-width">Login</button>
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                <div class="social-auth">
+                    <button type="button" class="social-btn google">
+                        <span class="social-icon">🔍</span>
+                        Continue with Google
+                    </button>
+                    <button type="button" class="social-btn facebook">
+                        <span class="social-icon">📘</span>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <p class="auth-switch">
+                    Don't have an account? <a href="#" id="switch-to-register">Sign up</a>
+                </p>
+            </form>
         </div>
     </div>
 
-    <!-- Game World -->
-    <div id="game-world" class="game-world hidden">
-        <!-- HUD -->
-        <div class="hud">
-            <div class="player-info">
-                <div class="player-avatar" id="player-avatar">⚔️</div>
-                <div class="player-stats">
-                    <div class="player-name" id="player-name">Hero</div>
-                    <div class="stat-bars">
-                        <div class="stat-bar health">
-                            <span data-en="HP" data-km="HP">HP</span>
-                            <div class="bar">
-                                <div class="bar-fill" id="health-bar" style="width: 100%"></div>
-                            </div>
-                            <span id="health-text">100/100</span>
-                        </div>
-                        <div class="stat-bar mana">
-                            <span data-en="MP" data-km="MP">MP</span>
-                            <div class="bar">
-                                <div class="bar-fill" id="mana-bar" style="width: 100%"></div>
-                            </div>
-                            <span id="mana-text">50/50</span>
-                        </div>
-                    </div>
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Your Account</h2>
+                <button class="modal-close" id="register-close">&times;</button>
+            </div>
+            <form class="auth-form" id="register-form">
+                <div class="form-group">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" required minlength="3" maxlength="20">
+                    <div class="input-hint">3-20 characters, letters and numbers only</div>
                 </div>
-            </div>
-
-            <div class="mini-map">
-                <div class="map-title" data-en="Map" data-km="ផែនទី">Map</div>
-                <div class="map-content">
-                    <div class="player-dot"></div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
                 </div>
-            </div>
-        </div>
-
-        <!-- Game Canvas -->
-        <div class="game-canvas">
-            <div class="world-grid" id="world-grid"></div>
-            <div class="player-character" id="player-character">
-                <div class="character-sprite">⚔️</div>
-                <div class="character-name" id="character-display-name">Hero</div>
-            </div>
-        </div>
-
-        <!-- Chat System -->
-        <div class="chat-system">
-            <div class="chat-messages" id="chat-messages">
-                <div class="system-message" data-en="Welcome to the Ancient Realm!" data-km="សូមស្វាគមន៍មកកាន់ពិភពបុរាណ!">Welcome to the Ancient Realm!</div>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="chat-input" placeholder="Type your message..." data-en-placeholder="Type your message..." data-km-placeholder="វាយសាររបស់អ្នក...">
-                <button id="chat-send" data-en="Send" data-km="ផ្ញើ">Send</button>
-            </div>
-        </div>
-
-        <!-- Action Bar -->
-        <div class="action-bar">
-            <div class="skill-slot" data-skill="attack">
-                <div class="skill-icon">⚔️</div>
-                <div class="skill-key">1</div>
-            </div>
-            <div class="skill-slot" data-skill="defend">
-                <div class="skill-icon">🛡️</div>
-                <div class="skill-key">2</div>
-            </div>
-            <div class="skill-slot" data-skill="heal">
-                <div class="skill-icon">💊</div>
-                <div class="skill-key">3</div>
-            </div>
-            <div class="skill-slot" data-skill="special">
-                <div class="skill-icon">✨</div>
-                <div class="skill-key">4</div>
-            </div>
-        </div>
-
-        <!-- Inventory -->
-        <div class="inventory-panel hidden" id="inventory-panel">
-            <div class="panel-header">
-                <h3 data-en="Inventory" data-km="ឥវ៉ាន់">Inventory</h3>
-                <button class="close-btn" id="close-inventory">×</button>
-            </div>
-            <div class="inventory-grid" id="inventory-grid">
-                <!-- Inventory slots will be generated by JS -->
-            </div>
-        </div>
-
-        <!-- Game Menu -->
-        <div class="game-menu">
-            <button class="menu-icon-btn" id="inventory-btn" data-en="Inventory" data-km="ឥវ៉ាន់">🎒</button>
-            <button class="menu-icon-btn" id="quests-btn" data-en="Quests" data-km="បេសកកម្ម">📜</button>
-            <button class="menu-icon-btn" id="map-btn" data-en="Map" data-km="ផែនទី">🗺️</button>
-            <button class="menu-icon-btn" id="settings-game-btn" data-en="Settings" data-km="ការកំណត់">⚙️</button>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required minlength="8">
+                    <div class="password-strength" id="password-strength"></div>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm">Confirm Password</label>
+                    <input type="password" id="register-confirm" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-server">Preferred Server</label>
+                    <select id="register-server" required>
+                        <option value="">Select a server</option>
+                        <option value="dragon-realm">Dragon Realm (US East)</option>
+                        <option value="phoenix-valley">Phoenix Valley (US West)</option>
+                        <option value="tiger-mountain">Tiger Mountain (EU)</option>
+                        <option value="jade-empire">Jade Empire (Asia)</option>
+                    </select>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agree-terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary full-width">Create Account</button>
+                <p class="auth-switch">
+                    Already have an account? <a href="#" id="switch-to-login">Sign in</a>
+                </p>
+            </form>
         </div>
     </div>
 
-    <!-- Combat System -->
-    <div id="combat-screen" class="combat-screen hidden">
-        <div class="combat-background"></div>
-        <div class="combat-ui">
-            <div class="enemy-section">
-                <div class="enemy-sprite" id="enemy-sprite">👹</div>
-                <div class="enemy-info">
-                    <div class="enemy-name" id="enemy-name">Ancient Demon</div>
-                    <div class="enemy-health">
-                        <div class="bar">
-                            <div class="bar-fill enemy-hp" id="enemy-health-bar" style="width: 100%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="combat-actions">
-                <button class="combat-btn" id="attack-btn" data-en="Attack" data-km="វាយប្រហារ">Attack ⚔️</button>
-                <button class="combat-btn" id="defend-btn" data-en="Defend" data-km="ការពារ">Defend 🛡️</button>
-                <button class="combat-btn" id="heal-btn" data-en="Heal" data-km="ព្យាបាល">Heal 💊</button>
-                <button class="combat-btn" id="flee-btn" data-en="Flee" data-km="រត់គេច">Flee 💨</button>
-            </div>
-
-            <div class="combat-log" id="combat-log">
-                <div class="log-message" data-en="A wild demon appears!" data-km="អារក្សព្រៃបានបង្ហាញខ្លួន!">A wild demon appears!</div>
-            </div>
-        </div>
-    </div>
+    <!-- Notification System -->
+    <div id="notification-container" class="notification-container"></div>
 
     <script src="script.js"></script>
 </body>
