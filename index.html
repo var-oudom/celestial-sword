@@ -1,23 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Sword - Ancient Chinese MMORPG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="km">ខ្មែរ</button>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="dragon-logo">🐉</div>
+            <h1 class="game-title" data-en="Celestial Sword" data-km="ដាវស្វាយ">Celestial Sword</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text" data-en="Loading the Ancient Realm..." data-km="កំពុងផ្ទុកពិភពបុរាណ...">Loading the Ancient Realm...</p>
+        </div>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="main-menu" class="main-menu hidden">
+        <div class="menu-background"></div>
+        <div class="menu-content">
+            <h1 class="game-title" data-en="Celestial Sword" data-km="ដាវស្វាយ">Celestial Sword</h1>
+            <div class="menu-buttons">
+                <button class="menu-btn" id="new-game-btn" data-en="New Journey" data-km="ដំណើរថ្មី">New Journey</button>
+                <button class="menu-btn" id="continue-btn" data-en="Continue" data-km="បន្ត">Continue</button>
+                <button class="menu-btn" id="settings-btn" data-en="Settings" data-km="ការកំណត់">Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Character Creation -->
+    <div id="character-creation" class="character-creation hidden">
+        <div class="creation-background"></div>
+        <div class="creation-content">
+            <h2 data-en="Create Your Hero" data-km="បង្កើតវីរបុរសរបស់អ្នក">Create Your Hero</h2>
+            
+            <div class="character-preview">
+                <div class="character-avatar" id="character-avatar">⚔️</div>
+            </div>
+
+            <div class="creation-form">
+                <div class="form-group">
+                    <label data-en="Name:" data-km="ឈ្មោះ:">Name:</label>
+                    <input type="text" id="character-name" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label data-en="Class:" data-km="ថ្នាក់:">Class:</label>
+                    <div class="class-selection">
+                        <div class="class-option active" data-class="warrior">
+                            <div class="class-icon">⚔️</div>
+                            <span data-en="Warrior" data-km="អ្នកចម្បាំង">Warrior</span>
+                        </div>
+                        <div class="class-option" data-class="mage">
+                            <div class="class-icon">🔮</div>
+                            <span data-en="Mage" data-km="អ្នកវេទមន្ត">Mage</span>
+                        </div>
+                        <div class="class-option" data-class="archer">
+                            <div class="class-icon">🏹</div>
+                            <span data-en="Archer" data-km="អ្នកបាញ់ធ្នូ">Archer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="create-btn" id="create-character-btn" data-en="Begin Adventure" data-km="ចាប់ផ្តើមការផ្សងព្រេង">Begin Adventure</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game World -->
+    <div id="game-world" class="game-world hidden">
+        <!-- HUD -->
+        <div class="hud">
+            <div class="player-info">
+                <div class="player-avatar" id="player-avatar">⚔️</div>
+                <div class="player-stats">
+                    <div class="player-name" id="player-name">Hero</div>
+                    <div class="stat-bars">
+                        <div class="stat-bar health">
+                            <span data-en="HP" data-km="HP">HP</span>
+                            <div class="bar">
+                                <div class="bar-fill" id="health-bar" style="width: 100%"></div>
+                            </div>
+                            <span id="health-text">100/100</span>
+                        </div>
+                        <div class="stat-bar mana">
+                            <span data-en="MP" data-km="MP">MP</span>
+                            <div class="bar">
+                                <div class="bar-fill" id="mana-bar" style="width: 100%"></div>
+                            </div>
+                            <span id="mana-text">50/50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mini-map">
+                <div class="map-title" data-en="Map" data-km="ផែនទី">Map</div>
+                <div class="map-content">
+                    <div class="player-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="game-canvas">
+            <div class="world-grid" id="world-grid"></div>
+            <div class="player-character" id="player-character">
+                <div class="character-sprite">⚔️</div>
+                <div class="character-name" id="character-display-name">Hero</div>
+            </div>
+        </div>
+
+        <!-- Chat System -->
+        <div class="chat-system">
+            <div class="chat-messages" id="chat-messages">
+                <div class="system-message" data-en="Welcome to the Ancient Realm!" data-km="សូមស្វាគមន៍មកកាន់ពិភពបុរាណ!">Welcome to the Ancient Realm!</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Type your message..." data-en-placeholder="Type your message..." data-km-placeholder="វាយសាររបស់អ្នក...">
+                <button id="chat-send" data-en="Send" data-km="ផ្ញើ">Send</button>
+            </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+            <div class="skill-slot" data-skill="attack">
+                <div class="skill-icon">⚔️</div>
+                <div class="skill-key">1</div>
+            </div>
+            <div class="skill-slot" data-skill="defend">
+                <div class="skill-icon">🛡️</div>
+                <div class="skill-key">2</div>
+            </div>
+            <div class="skill-slot" data-skill="heal">
+                <div class="skill-icon">💊</div>
+                <div class="skill-key">3</div>
+            </div>
+            <div class="skill-slot" data-skill="special">
+                <div class="skill-icon">✨</div>
+                <div class="skill-key">4</div>
+            </div>
+        </div>
+
+        <!-- Inventory -->
+        <div class="inventory-panel hidden" id="inventory-panel">
+            <div class="panel-header">
+                <h3 data-en="Inventory" data-km="ឥវ៉ាន់">Inventory</h3>
+                <button class="close-btn" id="close-inventory">×</button>
+            </div>
+            <div class="inventory-grid" id="inventory-grid">
+                <!-- Inventory slots will be generated by JS -->
+            </div>
+        </div>
+
+        <!-- Game Menu -->
+        <div class="game-menu">
+            <button class="menu-icon-btn" id="inventory-btn" data-en="Inventory" data-km="ឥវ៉ាន់">🎒</button>
+            <button class="menu-icon-btn" id="quests-btn" data-en="Quests" data-km="បេសកកម្ម">📜</button>
+            <button class="menu-icon-btn" id="map-btn" data-en="Map" data-km="ផែនទី">🗺️</button>
+            <button class="menu-icon-btn" id="settings-game-btn" data-en="Settings" data-km="ការកំណត់">⚙️</button>
+        </div>
+    </div>
+
+    <!-- Combat System -->
+    <div id="combat-screen" class="combat-screen hidden">
+        <div class="combat-background"></div>
+        <div class="combat-ui">
+            <div class="enemy-section">
+                <div class="enemy-sprite" id="enemy-sprite">👹</div>
+                <div class="enemy-info">
+                    <div class="enemy-name" id="enemy-name">Ancient Demon</div>
+                    <div class="enemy-health">
+                        <div class="bar">
+                            <div class="bar-fill enemy-hp" id="enemy-health-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="combat-actions">
+                <button class="combat-btn" id="attack-btn" data-en="Attack" data-km="វាយប្រហារ">Attack ⚔️</button>
+                <button class="combat-btn" id="defend-btn" data-en="Defend" data-km="ការពារ">Defend 🛡️</button>
+                <button class="combat-btn" id="heal-btn" data-en="Heal" data-km="ព្យាបាល">Heal 💊</button>
+                <button class="combat-btn" id="flee-btn" data-en="Flee" data-km="រត់គេច">Flee 💨</button>
+            </div>
+
+            <div class="combat-log" id="combat-log">
+                <div class="log-message" data-en="A wild demon appears!" data-km="អារក្សព្រៃបានបង្ហាញខ្លួន!">A wild demon appears!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
